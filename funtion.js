@@ -77,7 +77,12 @@ function validateMessage() {
 
 function validateForm() {
     if (!validateName() || !validateEmail() || !validateMessage()) {
+        submitError.style.display='block';
         submitError.innerHTML = 'Please fix error to submit';
+        setTimeout(function(){
+            submitError.style.display='none';
+        }, 
+        1500);
         return false;
     }
 }
